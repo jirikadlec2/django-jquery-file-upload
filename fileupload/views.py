@@ -3,13 +3,13 @@ import json
 
 from django.http import HttpResponse
 from django.views.generic import CreateView, DeleteView, ListView
-from .models import Picture
+from .models import RasterFile
 from .response import JSONResponse, response_mimetype
 from .serialize import serialize
 
 
 class PictureCreateView(CreateView):
-    model = Picture
+    model = RasterFile
     fields = "__all__"
 
     def form_valid(self, form):
@@ -41,7 +41,7 @@ class jQueryVersionCreateView(PictureCreateView):
 
 
 class PictureDeleteView(DeleteView):
-    model = Picture
+    model = RasterFile
 
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -52,7 +52,7 @@ class PictureDeleteView(DeleteView):
 
 
 class PictureListView(ListView):
-    model = Picture
+    model = RasterFile
 
     def render_to_response(self, context, **response_kwargs):
         files = [ serialize(p) for p in self.get_queryset() ]
