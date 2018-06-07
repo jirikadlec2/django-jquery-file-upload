@@ -8,6 +8,7 @@ db
 /env
 /venv
 /django-jquery-file-upload/media
+/src/django-jquery-file-upload/media
 *.log
 *.pot
 *.pyc
