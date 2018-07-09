@@ -1,5 +1,5 @@
 """
-django-jquery-file-upload
+config
 """
 
 from setuptools import setup, find_packages

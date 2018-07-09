@@ -60,3 +60,7 @@ class PictureListView(ListView):
         response = JSONResponse(data, mimetype=response_mimetype(self.request))
         response['Content-Disposition'] = 'inline; filename=files.json'
         return response
+
+
+def resumable_demo(request):
+    return render(request, "resumable/resumable_test.html")
